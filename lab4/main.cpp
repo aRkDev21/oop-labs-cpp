@@ -10,7 +10,7 @@ public:
 
 class Course : public Entity {
 private:
-    inline static int courseCount = 0; // inline
+    static int courseCount;
 
     std::string* students;
     int capacity;
@@ -51,6 +51,8 @@ public:
         delete[] students;
     }
 };
+
+int Course::courseCount = 0;
 
 int main() {
     Course c1("learn C++");
