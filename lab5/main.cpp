@@ -13,7 +13,7 @@ public:
     Matrix(int rows, int cols) : rows(rows), cols(cols) {
         data = new T*[rows];
         for (int i = 0; i < rows; i++) 
-            data[i] = new T[cols];
+            data[i] = new T[cols]();
     }
 
     Matrix(const Matrix<T>& m) : rows(m.rows), cols(m.cols) {
@@ -43,7 +43,7 @@ public:
                 if (i < rows && j < cols)
                     new_data[i][j] = data[i][j];
                 else 
-                    new_data[i][j] = 0;
+                    new_data[i][j] = T();
             }
         }
 
